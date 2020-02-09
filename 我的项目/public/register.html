@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function register(){
+            //1.创建xhr异步对象
+            var xhr=new XMLHttpRequest();
+            //4.创建监听,接收响应
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4&&xhr.status==200){
+                    var result=xhr.responseText;
+                    console.log(result);
+                    var uname=xhr.responseText;
+                    // if(uname==1){
+                    //     document.getElementById('uname').innerHTML='用户名已存在';
+                    // }else{
+                    //     document.getElementById('uname').innerHTML='√';
+                    // }
+                    
+                }
+            }
+            //2.打开连接,创建请求
+            xhr.open('get','/register/register?uname='+uname.value+'&upwd='+upwd.value+'&phone='+phone.value+'&email='+email.value,true);
+            //3.发送请求
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <p style="margin:0px;">注册</p>
+    用户<input type="text" id='uname'><br>
+    密码<input type="text" id='upwd'><br>
+    电话<input type="text" id='phone'><br>
+    邮箱<input type="text" id='email'><br>
+    <button onclick="register()">注册</button>
+    <div id='d1'></div>
+</body>
+</html>

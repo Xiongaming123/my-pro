@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function login(){
+            //1.创建xhr异步对象
+            var xhr=new XMLHttpRequest();
+            //4.创建监听,接收响应
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4&&xhr.status==200){
+                    var result=xhr.responseText;
+                    console.log(result);
+                    d1.innerHTML=result;
+                }
+            }
+            //2.打开连接,创建请求
+            xhr.open('get','/login/login?uname='+uname.value+'&upwd='+upwd.value,true);
+            //3.发送请求
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <p style="margin-bottom: 0px;">登录</p>
+    用户<input type="text" id='uname'><br>
+    密码<input type="text" id='upwd'><br>
+    <button onclick="login()">登录</button>
+    <div id='d1'></div>
+</body>
+</html>

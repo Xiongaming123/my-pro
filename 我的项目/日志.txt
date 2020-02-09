@@ -1,0 +1,9 @@
+mysql数据库表格说明
+xm_carousel_item:首页轮播图图片
+xm_navbar_item:首页导航栏标题及url
+xm_peijian:首页商品配件
+xm_site_info:首页显示内容,包括版权,logo等
+xm_six_photos:首页轮播图左下六张图片
+xm_star_product:首页明星商品
+xm_three_product:首页轮播图下三张商品图片及url
+xm_user:用户
